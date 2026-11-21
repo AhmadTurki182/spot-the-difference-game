@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spot the Difference — Sunny Park Hunt</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Spot the Difference</h1>
+    <p class="tag">Two pictures, seven sneaky changes. Find them all before the clock runs out!</p>
+  </header>
+
+  <div id="hud">
+    <div class="stat"><span class="label">Level</span><strong id="levelName">Sunny Park</strong></div>
+    <div class="stat"><span class="label">Found</span><strong id="foundCount">0 / 7</strong></div>
+    <div class="stat"><span class="label">Still hiding</span><strong id="leftCount">7 left</strong></div>
+    <div class="stat"><span class="label">Score</span><strong id="score">0</strong></div>
+    <div class="stat"><span class="label">Time</span><strong id="timer">3:00</strong></div>
+    <div class="stat"><span class="label">Hints</span><strong id="hints">3</strong></div>
+  </div>
+
+  <div id="boards">
+    <figure class="panel">
+      <figcaption>Picture A — the original</figcaption>
+      <canvas id="leftCanvas" width="520" height="400" tabindex="0" aria-label="Original picture. Use arrow keys to move the cursor, Enter to check a spot."></canvas>
+    </figure>
+    <figure class="panel">
+      <figcaption>Picture B — spot what changed</figcaption>
+      <canvas id="rightCanvas" width="520" height="400" tabindex="0" aria-label="Changed picture. Use arrow keys to move the cursor, Enter to check a spot."></canvas>
+    </figure>
+  </div>
+
+  <div id="message" role="status">Click a difference on either picture — or move with the arrow keys and press Enter.</div>
+
+  <div id="controls">
+    <button id="hintBtn" type="button">Hint (H)</button>
+    <button id="nextBtn" type="button">Next level (N)</button>
+    <button id="restartBtn" type="button">Restart level (R)</button>
+    <button id="soundBtn" type="button">Sound: on</button>
+  </div>
+
+  <div id="overlay" class="hidden">
+    <div id="overlayCard">
+      <h2 id="overlayTitle">Welcome, detective!</h2>
+      <p id="overlayText">Two pictures look the same — but seven things changed. Find them all!</p>
+      <div id="levelPick"></div>
+      <button id="playBtn" type="button">Start playing</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Keyboard: arrows move the crosshair · Enter / Space checks a spot · H hint · N next level · R restart · M sound. Mouse: click a spot on either picture.</p>
+    <p class="credit">An original game: Sunny Park, Sandy Beach and Cozy Kitchen, drawn in code. No borrowed art, photos or music.</p>
+  </footer>
+</div>
+<script src="src/scenes.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
